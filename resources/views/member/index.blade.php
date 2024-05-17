@@ -45,7 +45,7 @@
                                     <td style="display: flex;">
                                        
                                     <button type="button" class="btn btn-primary">
-                                        <a class="text-white text-decoration-none" href="{{route('member.show', $member->id)}}">Voir</a>
+                                        <a class="text-white text-decoration-none" href="{{route('adhesion.create', $member->id)}}">Voir</a>
                                     </button>
                                     <button type="button" class="btn btn-secondary">
                                         <a  class="text-white text-decoration-none" href="{{route('member.edit', $member->id)}}">Modifier</a>

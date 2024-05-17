@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests\Member;
+namespace App\Http\Requests\ContributionType;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreRequest extends FormRequest
+class UpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -23,13 +23,11 @@ class StoreRequest extends FormRequest
     {
         return [
             //
-            'firstname'=>'required',
-            'lastname'=>'required',
-            'gender'=>'required',
-            'phone'=>'required',
-            'adress'=>'required',
-            'born_at'=>'required',
-            'category_id'=>'required|exists:categories,id'
+            'name'=>'required',
+            'start_at'=>'required',
+            'end_at'=>'required',
+            'taux'=>'required',
+            'echeance'=>'required'
         ];
     }
 }

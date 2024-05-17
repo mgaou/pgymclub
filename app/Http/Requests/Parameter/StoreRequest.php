@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Member;
+namespace App\Http\Requests\Parameter;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -11,7 +11,7 @@ class StoreRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -23,13 +23,8 @@ class StoreRequest extends FormRequest
     {
         return [
             //
-            'firstname'=>'required',
-            'lastname'=>'required',
-            'gender'=>'required',
-            'phone'=>'required',
-            'adress'=>'required',
-            'born_at'=>'required',
-            'category_id'=>'required|exists:categories,id'
+            'code'=>'required',
+            'created_by'=>'required'
         ];
     }
 }

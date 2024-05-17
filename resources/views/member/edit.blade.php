@@ -35,7 +35,7 @@
                      <div class="form-row" style="display:flex;align-items: end">
                         <div class="form-group col-md-2">
                             <label for="gender">Sexe</label>
-                            <select required id="gender" class="form-control" value="{{$member->gender}}">
+                            <select required id="gender" class="form-control" name="gender" value="{{$member->gender}}">
                                <option>M</option>
                                 <option>F</option>
                             </select>
@@ -46,18 +46,18 @@
                         </div>
                         <div class="form-group col-md-8">
                             <label class="form-label">Lieu de naissance</label>
-                            <input required type="text" name="placeofbirth" class="form-control" value="{{$member->placeofbirth}}">
+                            <input  type="text" name="placeofbirth" class="form-control" value="{{$member->placeofbirth}}">
                         </div>
                      </div>                    
                        <div class="form-row" style="display:flex;align-items: end">
                         <div class="form-group col-md-5">
                                 <label class="form-label">Photo</label>
-                                <input required type="text" name="picture_path" class="form-control" value="{{$member->picture_path}}">
+                                <input  type="text" name="picture_path" class="form-control" value="{{$member->picture_path}}">
                         </div>
 
                         <div class="form-group col-md-5">
                             <label class="form-label">Acte naissance</label>
-                            <input required type="text" name="birth_path" class="form-control" value="{{$member->birth_path}}">
+                            <input  type="text" name="birth_path" class="form-control" value="{{$member->birth_path}}">
                         </div>
                         <div class="form-group col-md-2">
                             <label for="banned_at">Activé le</label>

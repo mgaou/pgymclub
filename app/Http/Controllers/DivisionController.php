@@ -80,9 +80,8 @@ class DivisionController extends Controller
     public function process(Division $division){
         $request=request();
         $name=$request->input('name');
-        $cretead_by=$request->input('created_by');
         $division->name=$name;
-        $division->created_by=$cretead_by;
+        $division->created_by=$request->user()->name;
         $division->save();
     }
 }

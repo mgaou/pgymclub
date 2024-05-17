@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Member extends Model
 {
-    use HasFactory;
+    protected $appends = ['last_division','last_club'];
     public function category() {
         return $this->belongsTo(Category::class);
     }
@@ -23,6 +23,13 @@ class Member extends Model
     }
     public function divisions(){
         return $this->belongsToMany(Division::class);
+    }
+
+    public function getLastDivisionAttribute() {
+        return $this->divisions()->latest()->first();
+    }
+    public function getLastClubAttribute(){
+        return $this->clubs()->latest()->first();
     }
     protected $fillable=[
         'firtname','lastname','adress','phone','gender','born_at',

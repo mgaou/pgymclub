@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdhesionController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\DivisionController;
@@ -40,7 +41,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/profession.index',[ProfessionController::class,'index'])->name('profession');
     Route::resource('category', CategoryController::class)->except('delete');
     route::resource('division',DivisionController::class)->except('show','delete');
-	Route::resource('club',ClubController::class)->except('delete');
+	  Route::resource('club',ClubController::class)->except('delete');
     Route::resource('profession',ProfessionController::class)->except('show','delete');
     Route::resource('member',MemberController::class)->except('delete');
+    route::resource('adhesion',AdhesionController::class)->except('delete');
   });

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Member;
+namespace App\Http\Requests\Adhesion;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -23,13 +23,10 @@ class StoreRequest extends FormRequest
     {
         return [
             //
-            'firstname'=>'required',
-            'lastname'=>'required',
-            'gender'=>'required',
-            'phone'=>'required',
-            'adress'=>'required',
-            'born_at'=>'required',
-            'category_id'=>'required|exists:categories,id'
+            'start_at'=>'required',
+            'member_id'=>'required',
+            'club_id'=>'required',
+            'division_id'=>'required'
         ];
     }
 }

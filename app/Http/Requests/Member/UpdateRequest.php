@@ -25,12 +25,10 @@ class UpdateRequest extends FormRequest
             //
             'firstname'=>'required',
             'lastname'=>'required',
-            // 'gender'=>'required',
+            'gender'=>'required',
             'phone'=>'required',
             'adress'=>'required',
             'born_at'=>'required',
-            'placeofbirth'=>'required',
-            'picture_path'=>'required',
             'category_id'=>'required|exists:categories,id'
         ];
     }
