@@ -12,7 +12,7 @@ class Division extends Model
         return $this->belongsToMany(Club::class);
     }
     public function members(){
-        return $this->belongsToMany(Member::class);
+        return $this->belongsToMany(Member::class, 'club_division_member');
     }
     protected $fillable=[
         'name','created_by'

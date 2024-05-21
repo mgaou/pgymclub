@@ -39,12 +39,6 @@
                         </div>    
                        
                         <div class="row">
-                            <div class="col-md-12 d-flex justify-content-between">
-                                <button type="submit" class="btn btn-primary">Enregistrer</button>
-                                <button type="button" class="btn btn-secondary" action="{{ route('member.index') }}">Retour</button>
-                            </div>
-                        </div> 
-                        <div class="row">
                             <div class="col-md-2">
                                 <label class="form-label">Date début</label>
                                 <input required type="date" name="start_at" class="form-control">
@@ -54,15 +48,15 @@
                                 <input type="text" name="observe" class="form-control">
                             </div>
                         </div>
-                    </div>
+                   
 
                     <div class="row">
                             <div class="col-md-12 d-flex justify-content-between">
                                 <button type="submit" class="btn btn-primary">Enregistrer</button>
-                                <button type="button" class="btn btn-secondary" action="{{ route('index') }}">Retour</button>
+                                <a type="button" class="btn btn-secondary" href="{{url()->previous() }}">Retour</a>
                             </div>
                     </div> 
-
+                </div>
                 </form>
                 </div>
             </div>

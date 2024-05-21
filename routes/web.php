@@ -34,11 +34,6 @@ Auth::routes([
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
-    Route::get('/category.index',[CategoryController::class,'index'])->name('category');
-    Route::get('/member.index',[MemberController::class,'index'])->name('member');
-    Route::get('/club.index',[ClubController::class,'index'])->name('club');
-    Route::get('/division.index',[DivisionController::class,'index'])->name('division');
-    Route::get('/profession.index',[ProfessionController::class,'index'])->name('profession');
     Route::resource('category', CategoryController::class)->except('delete');
     route::resource('division',DivisionController::class)->except('show','delete');
 	  Route::resource('club',ClubController::class)->except('delete');

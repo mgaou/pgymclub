@@ -17,7 +17,7 @@
 
                                 <div class="dropdown-menu " aria-labelledby="navbarDropdown">
                                     <!-- <a class="dropdown-item" href="#">Liste des catégories</a> -->
-                                    <a class="dropdown-item" href="{{ route('category') }}">{{ __('Liste des catégories') }}</a>
+                                    <a class="dropdown-item" href="{{ route('category.index') }}">{{ __('Liste des catégories') }}</a>
                                     <a class="dropdown-item" href="{{ route('category.create') }}">Nouvelle catégorie</a>
                                 </div>
                         </li>
@@ -29,7 +29,7 @@
 
                                 <div class="dropdown-menu " aria-labelledby="navbarDropdown">
                                     <!-- <a class="dropdown-item" href="#">Liste des catégories</a> -->
-                                    <a class="dropdown-item"href="{{ route('member') }}">{{ __('Membres actuels du club') }}</a>
+                                    <a class="dropdown-item"href="{{ route('member.index') }}">{{ __('Membres actuels du club') }}</a>
                                     <a class="dropdown-item" href="{{ route('member.create') }}">Nouveau membre</a>
                                 </div>
                         </li>
@@ -40,7 +40,7 @@
 
                                 <div class="dropdown-menu " aria-labelledby="navbarDropdown">
                                     <!-- <a class="dropdown-item" href="#">Liste des catégories</a> -->
-                                    <a class="dropdown-item"href="{{ route('club') }}">{{ __('Répertoire des clubs') }}</a>
+                                    <a class="dropdown-item"href="{{ route('club.index') }}">{{ __('Répertoire des clubs') }}</a>
                                     <a class="dropdown-item" href="{{ route('club.create') }}">Nouveau club</a>
                                 </div>
 
@@ -53,7 +53,7 @@
 
                                 <div class="dropdown-menu " aria-labelledby="navbarDropdown">
                                     <!-- <a class="dropdown-item" href="#">Liste des catégories</a> -->
-                                    <a class="dropdown-item"href="{{ route('division') }}">{{ __('Répertoire des divisions') }}</a>
+                                    <a class="dropdown-item"href="{{ route('division.index') }}">{{ __('Répertoire des divisions') }}</a>
                                     <a class="dropdown-item" href="{{ route('division.create') }}">Nouvelle division</a>
                                 </div>
 
@@ -65,7 +65,7 @@
 
                                 <div class="dropdown-menu " aria-labelledby="navbarDropdown">
                                     <!-- <a class="dropdown-item" href="#">Liste des catégories</a> -->
-                                    <a class="dropdown-item"href="{{ route('profession') }}">{{ __('Répertoire des professions') }}</a>
+                                    <a class="dropdown-item"href="{{ route('profession.index') }}">{{ __('Répertoire des professions') }}</a>
                                     <a class="dropdown-item" href="{{ route('profession.create') }}">Nouvelle profession</a>
                                 </div>
 

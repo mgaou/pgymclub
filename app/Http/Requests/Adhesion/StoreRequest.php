@@ -24,9 +24,9 @@ class StoreRequest extends FormRequest
         return [
             //
             'start_at'=>'required',
-            'member_id'=>'required',
-            'club_id'=>'required',
-            'division_id'=>'required'
+            'member_id'=>'required|exists:members,id',
+            'club_id'=>'required|exists:clubs,id',
+            'division_id'=>'required|exits:divisions,id'
         ];
     }
 }

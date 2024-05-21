@@ -10,7 +10,7 @@
 
                 <div class="card-body">
                     
-                    <table class="table table-hover table-bordered border-primary table-striped table-responsive">
+                    <table class="table table-hover table-striped table-responsive">
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">Id</th>

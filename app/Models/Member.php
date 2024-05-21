@@ -22,7 +22,7 @@ class Member extends Model
         return $this->belongsToMany(Club::class);
     }
     public function divisions(){
-        return $this->belongsToMany(Division::class);
+        return $this->belongsToMany(Division::class, 'club_division_member');
     }
 
     public function getLastDivisionAttribute() {

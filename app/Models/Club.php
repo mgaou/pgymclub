@@ -12,7 +12,7 @@ class Club extends Model
         return $this->belongsToMany(Division::class);
     }
     public function members(){
-        return $this->belongsToMany(Member::class);
+        return $this->belongsToMany(Member::class, 'club_division_member');
     }
     protected $fillable=['
     name','leader'
