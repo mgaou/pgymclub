@@ -17,7 +17,7 @@
         </li>
         <li class="dropdown">
             <a href="#" class="nav-link dropdown-toggle  text-truncate" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fs-5 bi-table"></i><span class="ms-1 d-none d-sm-inline">Categorie</span>
+                <i class="fs-5 bi-bookmarks"></i><span class="ms-1 d-none d-sm-inline">Categorie</span>
             </a>
             <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdown">
                 <li><a class="dropdown-item" href="{{route('category.index')}}">Liste des categories</a></li>
@@ -41,7 +41,7 @@
         </li>
         <li class="dropdown">
             <a href="#" class="nav-link dropdown-toggle  text-truncate" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fs-5 bi-table"></i><span class="ms-1 d-none d-sm-inline">Division</span>
+                <i class="fs-5 bi-ubuntu"></i><span class="ms-1 d-none d-sm-inline">Division</span>
             </a>
             <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdown">
                 <li><a class="dropdown-item" href="{{route('division.index')}}">Liste des divisions</a></li>
@@ -53,7 +53,7 @@
         </li>
         <li class="dropdown">
             <a href="#" class="nav-link dropdown-toggle  text-truncate" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fs-5 bi-table"></i><span class="ms-1 d-none d-sm-inline">Club</span>
+                <i class="fs-5 bi-houses-fill"></i><span class="ms-1 d-none d-sm-inline">Club</span>
             </a>
             <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdown">
                 <li><a class="dropdown-item" href="{{route('club.index')}}">Liste des clubs</a></li>
@@ -65,7 +65,7 @@
         </li>
         <li class="dropdown">
             <a href="#" class="nav-link dropdown-toggle  text-truncate" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fs-5 bi-table"></i><span class="ms-1 d-none d-sm-inline">Profession</span>
+                <i class="fs-5 bi-microsoft-teams"></i><span class="ms-1 d-none d-sm-inline">Profession</span>
             </a>
             <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdown">
                 <li><a class="dropdown-item" href="{{route('profession.index')}}">Liste des professions</a></li>
@@ -79,7 +79,7 @@
         
         <li class="dropdown">
             <a href="#" class="nav-link dropdown-toggle  text-truncate" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fs-5 bi-people"></i><span class="ms-1 d-none d-sm-inline">Connexion</span>
+                <i class="fs-5 bi-person-fill-lock"></i><span class="ms-1 d-none d-sm-inline">Connexion</span>
             </a>
             <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdown">
                 @guest

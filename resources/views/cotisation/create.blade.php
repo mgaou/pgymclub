@@ -45,7 +45,7 @@
                             </div>
                             <div class="col-md-2">
                                 <label class="form-label">Montant restant</label>
-                                <input required type="number" name="value_rest" class="form-control">
+                                <input  type="number" name="value_rest" class="form-control">
                             </div>
                             <div class="col-md-8">
                                 <label class="form-label">Observations</label>

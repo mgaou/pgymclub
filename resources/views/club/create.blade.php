@@ -18,7 +18,12 @@
                         <input type="text" name="leader" class="form-control" placeholder="nom du créateur" >
 
                     </div>
-                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-between">
+                            <button type="submit" class="btn btn-primary">Enregistrer</button>
+                            <a type="button" class="btn btn-secondary" href="{{url()->previous() }}">Retour</a>
+                        </div>
+                    </div> 
                     
                 </form>
                     

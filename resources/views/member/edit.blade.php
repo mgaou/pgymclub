@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-          
+    <div class="row justify-content-center">          
         <div class="col-md-8">
             <div class="card">
 
@@ -64,7 +62,7 @@
                             <input type="datetime" name="banned_at" class="form-control" value="{{$member->banned_at}}" >
                         </div>               
                        </div>  
-                       <div class="form-group">
+                       <div class="form-group col-md-5">
                             <p>
                                 <label for="Categorie">Catégorie :</label>
                                 <select class="form-select" name="category_id" id="category_id">
@@ -86,7 +84,7 @@
                             <button type="submit" class="btn btn-primary">Enregistrer</button>
                         </div>
                         <div class="form-group">
-                            <button type="button" class="btn btn-secondary" action="{{ route('member.index') }}">Retour</button>
+                            <a type="button" class="btn btn-secondary" href="{{url()->previous() }}">Retour</a>
                         </div>
                     </div>                   
                     
@@ -97,5 +95,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection

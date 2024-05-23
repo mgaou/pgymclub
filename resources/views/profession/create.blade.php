@@ -15,7 +15,12 @@
                         <label class="form-label">Nom :</label>
                         <input required type="text" name="name" class="form-control" placeholder="nom de la profession">
                     </div>
-                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-between">
+                            <button type="submit" class="btn btn-primary">Enregistrer</button>
+                            <a type="button" class="btn btn-secondary" href="{{url()->previous() }}">Retour</a>
+                        </div>
+                    </div> 
                     
                 </form>
                     

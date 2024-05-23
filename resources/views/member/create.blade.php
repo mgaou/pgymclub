@@ -64,7 +64,7 @@
                             <input type="date" name="banned_at" class="form-control" >
                         </div>               
                        </div>  
-                       <div class="form-group">
+                       <div class="form-group col-md-5">
                             <p>
                                 <label class="form-label" for="Categorie">Catégorie :</label>
                                 <select class="form-select" name="category_id" id="category_id">
@@ -78,7 +78,7 @@
                         <div class="row">
                             <div class="col-md-12 d-flex justify-content-between">
                                 <button type="submit" class="btn btn-primary">Enregistrer</button>
-                                <button type="button" class="btn btn-secondary" action="{{ route('member.index') }}">Retour</button>
+                                <a type="button" class="btn btn-secondary" href="{{url()->previous() }}">Retour</a>
                             </div>
                         </div> 
 

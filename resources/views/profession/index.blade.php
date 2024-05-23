@@ -1,15 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-          
+
+    <div class="row justify-content-center">          
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">Répertoire des professions</div>
-
-                <div class="card-body">
-                    
+                <div class="card-body">                    
                     <table class="table table-hover table-striped table-responsive">
                         <thead class="thead-dark">
                             <tr>
@@ -17,8 +14,7 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">Action</th>
                             </tr>
-                        </thead>
-                       
+                        </thead>                       
                         @foreach($p as $profession)  
                                 <tr>                                
                                     <td>{{$profession->id}}</td>
@@ -54,5 +50,5 @@
             </div>
         </div>
     </div>
-</div>
+
 @endsection
