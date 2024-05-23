@@ -17,21 +17,6 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
-    @include('layouts.navbar')
-    <div class="container-fluid">
-    <div class="row">
-        <div class="col min-vh-100 p-4">
-            <!-- toggler -->
-            <button class="btn float-end" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button">
-                <i class="bi bi-arrow-right-square-fill fs-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"></i>
-            </button>
-            @include('partials.flash')
-            @include('partials.errors')
-
-            @yield('content')
-        </div>
-    </div>
-</div>
-    
+    @yield('content')
 </body>
 </html>

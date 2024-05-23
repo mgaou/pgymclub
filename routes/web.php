@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdhesionController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ClubController;
+use App\Http\Controllers\CotisationController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProfessionController;
@@ -34,10 +35,12 @@ Auth::routes([
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/exemple', [HomeController::class, 'exemple'])->name('exemple');
     Route::resource('category', CategoryController::class)->except('delete');
     route::resource('division',DivisionController::class)->except('show','delete');
 	  Route::resource('club',ClubController::class)->except('delete');
     Route::resource('profession',ProfessionController::class)->except('show','delete');
     Route::resource('member',MemberController::class)->except('delete');
     route::resource('adhesion',AdhesionController::class)->except('delete');
+    route::resource('cotisation',CotisationController::class);
   });
