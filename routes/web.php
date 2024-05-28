@@ -6,6 +6,7 @@ use App\Http\Controllers\ClubController;
 use App\Http\Controllers\CotisationController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\PratiqueController;
 use App\Http\Controllers\ProfessionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -43,4 +44,5 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('member',MemberController::class)->except('delete');
     route::resource('adhesion',AdhesionController::class)->except('delete');
     route::resource('cotisation',CotisationController::class);
+    route::resource('pratique',PratiqueController::class);
   });

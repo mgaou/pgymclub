@@ -46,7 +46,7 @@ class AdhesionController extends Controller
         //pointer sur le model afin d'avoir acces à la relation
         $member = Member::findOrFail(($member_id));
         $member->divisions()->attach($division_id, ['club_id' => $club_id,'start_at'=>$start_at,'observe'=>$observe,'created_by'=>$created_by]);
-        
+        $request->session()->flash('success','Votre adhésion a été enregistré avec succès.');
         return redirect()->route('member.index');
     }
 

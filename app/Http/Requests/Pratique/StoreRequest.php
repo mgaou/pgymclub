@@ -11,7 +11,7 @@ class StoreRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,9 @@ class StoreRequest extends FormRequest
     {
         return [
             //
+            'start_at'=>'required',
+            'member_id'=>'required|exists:members,id',
+            'profession_id'=>'required|exists:professions,id'
         ];
     }
 }

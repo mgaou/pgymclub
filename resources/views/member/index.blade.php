@@ -51,6 +51,9 @@
                                     <button type="button" class="btn btn-primary">
                                         <a class="text-white text-decoration-none" href="{{route('cotisation.create', $member->id)}}">Cotiser</a>
                                     </button>
+                                    <button type="button" class="btn btn-secondary">
+                                        <a class="text-white text-decoration-none" href="{{route('pratique.create', $member->id)}}">Exercer</a>
+                                    </button>
                                     <form action="{{route('member.destroy', $member->id)}}" method="POST"  style="display: inline;">
                                         @csrf
                                         @method("DELETE")

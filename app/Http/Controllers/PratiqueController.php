@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Pratique\StoreRequest;
+use App\Models\Member;
+use App\Models\Profession;
 use Illuminate\Http\Request;
 
 class PratiqueController extends Controller
@@ -20,14 +23,25 @@ class PratiqueController extends Controller
     public function create()
     {
         //
+        $members=Member::all();
+        $professions=Profession::all();
+        return view('pratique.create',compact('members','professions'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         //
+        $member_id=$request->input('member_id');
+        $profession_id=$request->input('profession_id');
+        $start_at=$request->input('start_at');
+        $created_by=$request->user()->name;
+        $member=Member::findOrFail($member_id);
+        $member->professions()->attach($profession_id,['start_at'=>$start_at,'created_by'=>$created_by]);
+        $request->session()->flash('success','Votre profession a été enregistré avec succès.');
+        return redirect()->route('member.index');
     }
 
     /**

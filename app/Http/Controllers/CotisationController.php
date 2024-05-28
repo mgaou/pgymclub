@@ -45,6 +45,7 @@ class CotisationController extends Controller
         $observe=$request->input('observe');
         $member=Member::findOrFail($member_id);
         $member->contribution_types()->attach($contribution_type_id,['mounth'=>$mounth,'value'=>$value,'value_rest'=>$value_rest,'paid_at'=>$paid_at,'observe'=>$observe]);
+        $request->session()->flash('success','Votre cotisation a été enregistré avec succès.');
         return redirect()->route('member.index');
     }
 
