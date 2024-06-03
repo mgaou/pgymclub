@@ -13,10 +13,11 @@ class CotisationController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($id)
     {
         //
-       
+        $member = Member::findOrFail($id);
+       $cotisations = $member->contribution_types()->paginate();
     }
 
     /**

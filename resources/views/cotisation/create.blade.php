@@ -15,7 +15,7 @@
                            <label class="form-label" for="member_id">Membre :</label>
                                 <select class="form-select" name="member_id" id="member_id">
                                     @foreach($members as $member) 
-                                        <option value="{{$member->id}}">{{$member->firstname}} {{$member->lastname}}</option>
+                                        <option value="{{$member->id}}">{{$member->fullname}}</option>
                                     @endforeach
                                 </select>
                         </div>    

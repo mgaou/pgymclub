@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Member extends Model
 {
-    protected $appends = ['last_division','last_club'];
+    protected $appends = ['last_division','last_club', 'fullname'];
     public function category() {
         return $this->belongsTo(Category::class);
     }
@@ -30,6 +30,9 @@ class Member extends Model
     }
     public function getLastClubAttribute(){
         return $this->clubs()->latest()->first();
+    }
+    public function getFullNameAttribute(){
+        return "{$this->firstname} {$this->lastname}";
     }
     protected $fillable=[
         'firtname','lastname','adress','phone','gender','born_at',

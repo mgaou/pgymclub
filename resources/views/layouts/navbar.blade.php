@@ -1,4 +1,4 @@
-<div class="offcanvas offcanvas-start w-15" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false">
+<div class="offcanvas offcanvas-start w-15 show" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false">
 <div class="offcanvas-header">
     <h6 class="offcanvas-title d-none d-sm-block" id="offcanvas">Menu</h6>
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
