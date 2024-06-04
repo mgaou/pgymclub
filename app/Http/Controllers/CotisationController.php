@@ -18,6 +18,8 @@ class CotisationController extends Controller
         //
         $member = Member::findOrFail($id);
        $cotisations = $member->contribution_types()->paginate();
+       //dd($cotisations);
+       return view('cotisation.index',compact('member', 'cotisations'));
     }
 
     /**

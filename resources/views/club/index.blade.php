@@ -3,7 +3,7 @@
 @section('content')
     <div class="row justify-content-center">
           
-        <div class="col-md-10">
+        <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Répertoire des clubs</div>
 
@@ -25,23 +25,27 @@
                                     <td>{{$club->name}}</td>
                                     <td>{{$club->leader}}</td>
                                     <td>
-                                       
-                                    <button type="button" class="btn btn-primary">
-                                        <a class="text-white text-decoration-none" href="{{route('club.show', $club->id)}}">Voir</a>
-                                    </button>
-                                    <button type="button" class="btn btn-secondary">
-                                        <a  class="text-white text-decoration-none" href="{{route('club.edit', $club->id)}}">Modifier</a>
-                                    </button>
-                                    <form action="{{route('club.destroy', $club->id)}}" method="POST"  style="display: inline;">
-                                        @csrf
-                                        @method("DELETE")
-                                        <button onclick="return confirm('Voulez-vous vraiment supprimer cet club?')" type="submit" class="btn btn-danger">
-                                            Supprimer
+                                    <div class="btn-group">
+                                       <button type="button" class="btn btn-secondary">
+                                            <a class="text-white text-decoration-none" href="{{route('club.show', $club->id)}}">
+                                                Voir
+                                            </a>
                                         </button>
-                                     
-                                    </form>
-                                        
-                                    </td>
+                                            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
+                                            <span class="visually-hidden">Toggle Dropdown</span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <li><a class="dropdown-item" href="{{route('club.edit', $club->id)}}">Modifier</a></li>
+                                            <li>
+                                            <form action="{{route('club.destroy', $club->id)}}" method="POST">
+                                                @csrf
+                                                @method("DELETE")
+                                                <a onclick="return confirm('Voulez-vous vraiment supprimer cet club?')" type="submit" class="dropdown-item" href="#">Supprimer</a>
+                                            </form>
+                                            </li>                          
+                                        </ul>
+                                    </div>
+                                </td>
                                 </tr>
                         @endforeach
                     </tbody>

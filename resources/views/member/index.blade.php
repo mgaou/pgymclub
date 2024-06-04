@@ -37,7 +37,7 @@
                                     <td>{{$member->created_by}}</td>
                                     <td>{{$member->update_by}}</td>
                                     <td>{{$member->category->name}}</td>
-                                    <td style="display: flex;">
+                                    <td>
                                     <div class="btn-group">
                                        <button type="button" class="btn btn-secondary">
                                             <a class="text-white text-decoration-none" href="{{route('adhesion.create', $member->id)}}">
@@ -49,7 +49,7 @@
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                             <li><a class="dropdown-item" href="{{route('member.edit', $member->id)}}">Modifier</a></li>
-                                            <li><a class="dropdown-item" href="{{route('cotisation.create', $member->id)}}">Cotiser</a></li>
+                                            <li><a class="dropdown-item" href="{{route('member.cotisation.index', $member->id)}}">Détails cotisations</a></li>
                                             <li><a class="dropdown-item" href="{{route('pratique.create', $member->id)}}">Exercer</a></li>
                                             <li>
                                             <form action="{{route('member.destroy', $member->id)}}" method="POST">

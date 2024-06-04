@@ -43,6 +43,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('profession',ProfessionController::class)->except('show','delete');
     Route::resource('member',MemberController::class)->except('delete');
     route::resource('adhesion',AdhesionController::class)->except('delete');
-    route::resource('cotisation',CotisationController::class);
+    route::resource('cotisation',CotisationController::class)->except('index');
+    route::get('/member/{id}/cotisations',[CotisationController::class,'index'])->name('member.cotisation.index');
     route::resource('pratique',PratiqueController::class);
   });
