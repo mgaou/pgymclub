@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Profession extends Model
 {
     use HasFactory;
+    protected $fillable=['name'];
     public function members(){
         return $this->belongsToMany(Member::class);
     }
-    protected $fillable=['name'];
+
 }

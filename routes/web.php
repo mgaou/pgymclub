@@ -3,10 +3,12 @@
 use App\Http\Controllers\AdhesionController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ClubController;
+use App\Http\Controllers\ContributionTypeController;
 use App\Http\Controllers\CotisationController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\PratiqueController;
+use App\Http\Controllers\PresenceController;
 use App\Http\Controllers\ProfessionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -42,8 +44,10 @@ Route::group(['middleware' => 'auth'], function() {
 	  Route::resource('club',ClubController::class)->except('delete');
     Route::resource('profession',ProfessionController::class)->except('show','delete');
     Route::resource('member',MemberController::class)->except('delete');
-    route::resource('adhesion',AdhesionController::class)->except('delete');
-    route::resource('cotisation',CotisationController::class)->except('index');
-    route::get('/member/{id}/cotisations',[CotisationController::class,'index'])->name('member.cotisation.index');
-    route::resource('pratique',PratiqueController::class);
+    route::resource('member.adhesion',AdhesionController::class)->except('delete');
+    route::resource('member.cotisation',CotisationController::class)->except('delete');
+    route::resource('member.pratique',PratiqueController::class);
+    route::resource('contributiontype',ContributionTypeController::class)->except('delete');
+    route::resource('member.presence',PresenceController::class);
+    Route::get('members/export/', [MemberController::class, 'export'])->name('member.export');
   });

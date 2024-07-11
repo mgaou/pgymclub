@@ -9,18 +9,16 @@
 
                 <div class="card-body">
                     
-                <form class="my-4" method="post" action="{{ route('pratique.store') }}">
+                <form class="my-4" method="post" action="{{ route('member.pratique.store',$member->id) }}">
                     @csrf
-                       <div class="form-group">
+                       <div class="form-group mb-3">
                            <label class="form-label" for="member_id">Membre :</label>
                                 <select class="form-select" name="member_id" id="member_id">
-                                    @foreach($members as $member) 
-                                        <option value="{{$member->id}}">{{$member->firstname}} {{$member->lastname}}</option>
-                                    @endforeach
+                                    <option value="{{$member->id}}">{{$member->firstname}} {{$member->lastname}}</option>                                   
                                 </select>
                         </div>    
                         
-                        <div class="form-group">
+                        <div class="form-group mb-3">
                            <label class="form-label" for="profession_id">Type cotisation :</label>
                                 <select class="form-select" name="profession_id" id="contribution_type_id">
                                     @foreach($professions as $profession) 
@@ -30,8 +28,8 @@
                         </div>    
 
                                    
-                        <div class="row">
-                            <div class="col-md-2">
+                        <div class="row mb-3">
+                            <div class="col-md-3">
                                 <label class="form-label">Date début</label>
                                 <input required type="date" name="start_at" class="form-control">
                             </div>                            

@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
-        Schema::table('contribution_type_member', function(Blueprint $table) {
+        
+        //Schema::rename('contribution_type_member', 'cotisations');
+        
+        Schema::table('cotisations', function(Blueprint $table) {
             $table->integer('value_rest')->nullable()->change();
             $table->text('observe')->nullable()->change();
             $table->text('cancel')->nullable()->change();
@@ -26,8 +28,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
-        Schema::table('contribution_type_member', function(Blueprint $table) {
+        //Schema::rename('cotisations','contribution_type_member');
+        Schema::table('cotisations', function(Blueprint $table) {
             $table->integer('value_rest')->change();
             $table->text('observe')->change();
             $table->text('cancel')->change();

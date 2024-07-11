@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\MembersExport;
 use App\Http\Requests\Member\StoreRequest;
 use App\Http\Requests\Member\UpdateRequest;
 use App\Models\Category;
 use App\Models\Member;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class MemberController extends Controller
 {
@@ -16,7 +18,7 @@ class MemberController extends Controller
     public function index()
     {
         //
-        //
+        //where('active', 1)->
         $members = Member::with('category')->latest()->paginate(5);
        return view('member.index', compact('members'));
     }
@@ -95,7 +97,7 @@ class MemberController extends Controller
         $member->born_at=$born_at;
         $palceofbirth=$request->input('placeofbirth');
         $member->placeofbirth=$palceofbirth;
-        $member->active='1';
+        $member->active='0';
         $banned_at=$request->input('banned_at');
         $member->banned_at=$banned_at;
         $member->created_by=$request->user()->name;
@@ -108,5 +110,10 @@ class MemberController extends Controller
         $member->category_id=$category_id;
         $member->save();
 
+    }
+
+    public function export() 
+    {
+        return Excel::download(new MembersExport, 'members.pdf', \Maatwebsite\Excel\Excel::DOMPDF);
     }
 }

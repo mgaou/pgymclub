@@ -26,7 +26,7 @@
                         </thead>                       
                         @foreach($members as $member)  
                                 <tr>                                
-                                    <td>{{$member->id}}</td>
+                                    <td style="background-color:{{ $member->active ? 'green !important' : 'red !important' }}">{{$member->id}}</td>
                                     <td>{{$member->firstname}}</td>
                                     <td>{{$member->lastname}}</td>
                                     <td>{{$member->adress}}</td>
@@ -40,7 +40,7 @@
                                     <td>
                                     <div class="btn-group">
                                        <button type="button" class="btn btn-secondary">
-                                            <a class="text-white text-decoration-none" href="{{route('adhesion.create', $member->id)}}">
+                                            <a class="text-white text-decoration-none" href="{{route('member.adhesion.create', $member->id)}}">
                                                 Voir
                                             </a>
                                         </button>
@@ -49,8 +49,15 @@
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                             <li><a class="dropdown-item" href="{{route('member.edit', $member->id)}}">Modifier</a></li>
-                                            <li><a class="dropdown-item" href="{{route('member.cotisation.index', $member->id)}}">Détails cotisations</a></li>
-                                            <li><a class="dropdown-item" href="{{route('pratique.create', $member->id)}}">Exercer</a></li>
+                                        @if ($member->active==1)
+                                             <li><a class="dropdown-item" href="{{route('member.cotisation.create', $member->id)}}">Ajouter une cotisation</a></li>
+                                        @endif
+                                        @if ($member->active)
+                                            <li><a class="dropdown-item" href="{{route('member.cotisation.index', $member->id )}}">Détails cotisations</a></li>
+                                        @endif
+                                            <li><a class="dropdown-item" href="{{route('member.presence.create', $member->id)}}">Ajouter une présence</a></li>
+                                            <li><a class="dropdown-item" href="{{route('member.presence.index', $member->id )}}">Détails pésences</a></li>
+                                            <li><a class="dropdown-item" href="{{route('member.pratique.create', $member->id)}}">Exercer</a></li>                                            
                                             <li>
                                             <form action="{{route('member.destroy', $member->id)}}" method="POST">
                                                 @csrf

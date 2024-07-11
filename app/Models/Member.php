@@ -7,12 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Member extends Model
 {
-    protected $appends = ['last_division','last_club', 'fullname'];
+    protected $appends = ['fullname'];
+    protected $fillable=[
+        'firtname','lastname','adress','phone','gender','born_at',
+        'palceofbirth','active','banned_at','created_by','update_by',
+        'picture_path','birth_path','category_id'
+
+    ];
+    protected $casts = [
+        'banned_at'  => 'datetime'
+    ];
     public function category() {
         return $this->belongsTo(Category::class);
     }
-    public function contribution_types(){
-        return $this->belongsToMany(ContributionType::class)->withPivot('mounth','value','value_rest','paid_at','observe','cancel','cancel_by','cancel_at','created_at','updated_at');
+    public function cotisations(){
+        return $this->hasMany(Cotisation::class);
     }
     //relation member_profession
     public function professions(){
@@ -28,16 +37,10 @@ class Member extends Model
     public function getLastDivisionAttribute() {
         return $this->divisions()->latest()->first();
     }
-    public function getLastClubAttribute(){
-        return $this->clubs()->latest()->first();
-    }
     public function getFullNameAttribute(){
         return "{$this->firstname} {$this->lastname}";
     }
-    protected $fillable=[
-        'firtname','lastname','adress','phone','gender','born_at',
-        'palceofbirth','active','banned_at','created_by','update_by',
-        'picture_path','birth_path','category_id'
-
-    ];
+    public function presences(){
+        return $this->hasMany(Presence::class);
+    }
 }

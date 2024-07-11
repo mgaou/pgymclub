@@ -54,7 +54,8 @@ class ContributionTypeController extends Controller
     public function edit(string $id)
     {
         //
-        return view('contributiontype.edit');
+        $contributionType=ContributionType::findOrFail($id);
+        return view('contributiontype.edit',compact('contributionType'));
     }
 
     /**

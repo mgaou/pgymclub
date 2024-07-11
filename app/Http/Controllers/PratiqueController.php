@@ -20,12 +20,12 @@ class PratiqueController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($member_id)
     {
         //
-        $members=Member::all();
+        $member=Member::findOrFail($member_id);
         $professions=Profession::all();
-        return view('pratique.create',compact('members','professions'));
+        return view('pratique.create',compact('member','professions'));
     }
 
     /**

@@ -1,4 +1,4 @@
-<div class="offcanvas offcanvas-start w-15 show" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false">
+<div class="offcanvas offcanvas-start w-15" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false">
 <div class="offcanvas-header">
     <h6 class="offcanvas-title d-none d-sm-block" id="offcanvas">Menu</h6>
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -19,8 +19,8 @@
             <a href="#" class="nav-link dropdown-toggle  text-truncate" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fs-5 bi-bookmarks"></i><span class="ms-1 d-none d-sm-inline">Categorie</span>
             </a>
-            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdown">
-                <li><a class="dropdown-item" href="{{route('category.index')}}">Liste des categories</a></li>
+            <ul class="dropdown-menu dropdown-menu-dark" text-small shadow" aria-labelledby="dropdown">
+                <li><a class="dropdown-item active" href="{{route('category.index')}}">Liste des categories</a></li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
@@ -31,20 +31,21 @@
             <a href="#" class="nav-link dropdown-toggle  text-truncate" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fs-5 bi-person-arms-up"></i><span class="ms-1 d-none d-sm-inline">Membre</span>
             </a>
-            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdown">
-                <li><a class="dropdown-item" href="{{route('member.index')}}">Liste des membres</a></li>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                <li><a class="dropdown-item active" href="{{route('member.index')}}">Liste des membres</a></li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
                 <li><a class="dropdown-item" href="{{route('member.create')}}">Nouveau membre</a></li>
+                <li><a class="dropdown-item" href="{{route('member.export')}}">Télécharger liste</a></li>
             </ul>
         </li>
         <li class="dropdown">
             <a href="#" class="nav-link dropdown-toggle  text-truncate" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fs-5 bi-ubuntu"></i><span class="ms-1 d-none d-sm-inline">Division</span>
             </a>
-            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdown">
-                <li><a class="dropdown-item" href="{{route('division.index')}}">Liste des divisions</a></li>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                <li><a class="dropdown-item active" href="{{route('division.index')}}">Liste des divisions</a></li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
@@ -55,8 +56,8 @@
             <a href="#" class="nav-link dropdown-toggle  text-truncate" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fs-5 bi-houses-fill"></i><span class="ms-1 d-none d-sm-inline">Club</span>
             </a>
-            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdown">
-                <li><a class="dropdown-item" href="{{route('club.index')}}">Liste des clubs</a></li>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                <li><a class="dropdown-item active" href="{{route('club.index')}}">Liste des clubs</a></li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
@@ -67,12 +68,24 @@
             <a href="#" class="nav-link dropdown-toggle  text-truncate" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fs-5 bi-microsoft-teams"></i><span class="ms-1 d-none d-sm-inline">Profession</span>
             </a>
-            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdown">
-                <li><a class="dropdown-item" href="{{route('profession.index')}}">Liste des professions</a></li>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                <li><a class="dropdown-item active" href="{{route('profession.index')}}">Liste des professions</a></li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
                 <li><a class="dropdown-item" href="{{route('profession.create')}}">Nouvelle profession</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="nav-link dropdown-toggle  text-truncate" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fs-5 bi-microsoft-teams"></i><span class="ms-1 d-none d-sm-inline">Cotisation</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                <li><a class="dropdown-item active" href="{{route('contributiontype.index')}}">Liste des cotisations</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="{{route('contributiontype.create')}}">Nouvelle cotisation</a></li>
             </ul>
         </li>
     @endauth

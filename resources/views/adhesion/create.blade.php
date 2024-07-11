@@ -9,14 +9,12 @@
 
                 <div class="card-body">
                     
-                <form class="my-4" method="post" action="{{ route('adhesion.store') }}">
+                <form class="my-4" method="post" action="{{ route('member.adhesion.store',$member->id) }}">
                     @csrf
                        <div class="form-group">
                            <label class="form-label" for="member_id">Membre :</label>
                                 <select class="form-select" name="member_id" id="member_id">
-                                    @foreach($members as $member) 
-                                        <option value="{{$member->id}}">{{$member->firstname}} {{$member->lastname}}</option>
-                                    @endforeach
+                                      <option value="{{$member->id}}">{{$member->firstname}} {{$member->lastname}}</option>
                                 </select>
                         </div>    
                         

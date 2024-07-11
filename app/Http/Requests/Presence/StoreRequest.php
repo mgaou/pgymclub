@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\ContributionType;
+namespace App\Http\Requests\Presence;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateRequest extends FormRequest
+class StoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,11 +23,8 @@ class UpdateRequest extends FormRequest
     {
         return [
             //
-            'name'=>'required',
-            'start_at'=>'required',
-            'end_at'=>'required',
-            'taux'=>'required',
-            'echeance'=>'required'
+            'pdate'=>'required',
+            'member_id'=>'required|exists:members,id'
         ];
     }
 }

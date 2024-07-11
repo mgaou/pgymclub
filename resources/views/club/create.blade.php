@@ -11,12 +11,15 @@
                     
                 <form method="post" action="{{ route('club.store') }}">
                     @csrf
-                    <div class="mb-3">
-                        <label class="form-label">Nom :</label>
-                        <input required type="text" name="name" class="form-control" placeholder="nom du club">
-                        <label class="form-label">Leader :</label>
-                        <input type="text" name="leader" class="form-control" placeholder="nom du créateur" >
-
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                             <label class="form-label">Nom :</label>
+                             <input required type="text" name="name" class="form-control" placeholder="nom du club">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Leader :</label>
+                            <input type="text" name="leader" class="form-control" placeholder="nom du créateur" >
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 d-flex justify-content-between">

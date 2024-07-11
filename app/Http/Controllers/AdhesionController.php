@@ -22,13 +22,13 @@ class AdhesionController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($member_id)
     {
         //
-        $members=Member::all();
+        $member=Member::findOrFail($member_id);
         $clubs=Club::all();
         $divisions=Division::all();
-        return view('adhesion.create',compact('members', 'clubs', 'divisions'));
+        return view('adhesion.create',compact('member', 'clubs', 'divisions'));
     }
 
     /**
