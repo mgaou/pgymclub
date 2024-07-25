@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\MemberProfessionExport;
 use App\Exports\MembersExport;
 use App\Http\Requests\Member\StoreRequest;
 use App\Http\Requests\Member\UpdateRequest;
@@ -114,6 +115,7 @@ class MemberController extends Controller
 
     public function export() 
     {
-        return Excel::download(new MembersExport, 'members.pdf', \Maatwebsite\Excel\Excel::DOMPDF);
+        //return Excel::download(new MembersExport, 'members.pdf', \Maatwebsite\Excel\Excel::DOMPDF);
+        return Excel::download(new MemberProfessionExport, 'memberProfessions.xlsx', \Maatwebsite\Excel\Excel::XLSX);
     }
 }

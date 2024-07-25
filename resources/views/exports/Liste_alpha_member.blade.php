@@ -1,0 +1,105 @@
+<table>
+	<tbody>
+		<tr>
+			<td>NOM</td>
+			<td>PRENOMS</td>
+			<td>SEXE</td>
+			<td>NEE LE</td>
+			<td>DATE DEBUT</td>
+			<td>VISA</td>
+			<td>TELEPHONE</td>
+			<td>EMAIL</td>
+		</tr>
+		<tr>
+			<td colspan="8">CLUB</td>
+		</tr>
+		<tr>
+			<td colspan="8">CATEGORIE</td>
+		</tr>
+		<tr>
+			<td colspan="8">DIVISION1</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td colspan="8">DIVISION2</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td colspan="8">CATEGORIE2</td>
+		</tr>
+		<tr>
+			<td colspan="8">DIVISION1</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td colspan="8">DIVISION2</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
