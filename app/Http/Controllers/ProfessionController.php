@@ -35,7 +35,7 @@ class ProfessionController extends Controller
     {
         //
         $this->process(new Profession());
-        $request->session()->flash('success','Votre profession a été modifié avec succès.');
+        $request->session()->flash('success','Votre profession a été enregistré avec succès.');
         return redirect()->route('profession.index');
     }
 

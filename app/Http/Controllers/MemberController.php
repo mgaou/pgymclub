@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Exports\MemberProfessionExport;
 use App\Exports\MembersExport;
+use App\Exports\MembersInactifsExport;
 use App\Http\Requests\Member\StoreRequest;
 use App\Http\Requests\Member\UpdateRequest;
 use App\Models\Category;
@@ -16,12 +17,13 @@ class MemberController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         //
         //where('active', 1)->
-        $members = Member::with('category')->latest()->paginate(5);
-       return view('member.index', compact('members'));
+        $q = $request->input('q');
+        $members = Member::search($q)->with('category')->latest()->paginate(5);
+       return view('member.index', compact('members','q'));
     }
 
     /**
@@ -113,6 +115,16 @@ class MemberController extends Controller
 
     }
 
+    public function export_actif() 
+    {
+        //return Excel::download(new MembersExport, 'members.pdf', \Maatwebsite\Excel\Excel::DOMPDF);
+        return Excel::download(new MembersExport, 'member.xlsx', \Maatwebsite\Excel\Excel::XLSX);
+    }
+    public function export_inactif() 
+    {
+        //return Excel::download(new MembersExport, 'members.pdf', \Maatwebsite\Excel\Excel::DOMPDF);
+        return Excel::download(new MembersInactifsExport, 'memberInactif.xlsx', \Maatwebsite\Excel\Excel::XLSX);
+    }
     public function export() 
     {
         //return Excel::download(new MembersExport, 'members.pdf', \Maatwebsite\Excel\Excel::DOMPDF);

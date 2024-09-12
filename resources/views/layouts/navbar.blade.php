@@ -19,7 +19,7 @@
             <a href="#" class="nav-link dropdown-toggle  text-truncate" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fs-5 bi-bookmarks"></i><span class="ms-1 d-none d-sm-inline">Categorie</span>
             </a>
-            <ul class="dropdown-menu dropdown-menu-dark" text-small shadow" aria-labelledby="dropdown">
+            <ul class="dropdown-menu dropdown-menu-dark" text-small shadow aria-labelledby="dropdown">
                 <li><a class="dropdown-item active" href="{{route('category.index')}}">Liste des categories</a></li>
                 <li>
                     <hr class="dropdown-divider">
@@ -32,12 +32,14 @@
                 <i class="fs-5 bi-person-arms-up"></i><span class="ms-1 d-none d-sm-inline">Membre</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
-                <li><a class="dropdown-item active" href="{{route('member.index')}}">Liste des membres</a></li>
+                <li><a class="dropdown-item {{request()->routeIs('member.index') ?? 'active'}}" href="{{route('member.index')}}">Liste des membres</a></li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="{{route('member.create')}}">Nouveau membre</a></li>
-                <li><a class="dropdown-item" href="{{route('member.export')}}">Télécharger liste</a></li>
+                <li><a class="dropdown-item {{request()->routeIs('member.create') ? 'active' : ''}}" href="{{route('member.create')}}">Nouveau membre</a></li>
+                <li><a class="dropdown-item {{request()->routeIs('member.export.actif') ? 'active' : ''}}" href="{{route('member.export.actif')}}">Télécharger liste active</a></li>
+                <li><a class="dropdown-item {{request()->routeIs('member.export.inactif') ? 'active' : ''}}" href="{{route('member.export.inactif')}}">Télécharger liste inactive</a></li>
+                <li><a class="dropdown-item {{request()->routeIs('member.export') ? 'active' : ''}}" href="{{route('member.export')}}">Télécharger liste par profession</a></li>
             </ul>
         </li>
         <li class="dropdown">

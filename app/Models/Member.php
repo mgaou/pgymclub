@@ -4,10 +4,30 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Member extends Model
 {
-    protected $appends = ['fullname'];
+    use SearchableTrait;/** compléter le model de recherche */
+
+    protected $searchable = [
+        /**
+         * Columns and their priority in search results.
+         * Columns with higher values are more important.
+         * Columns with equal values have equal importance.
+         *
+         * @var array
+         */
+        /**
+         *la liste des champs avec leur ordre de dominance sur lesquels la recherche sera effectuée  
+         */
+        'columns' => [
+            'members.firstname' => 10,
+            'members.lastname' => 10,
+            'members.adress' => 5
+        ]
+    ];
+
     protected $fillable=[
         'firtname','lastname','adress','phone','gender','born_at',
         'palceofbirth','active','banned_at','created_by','update_by',

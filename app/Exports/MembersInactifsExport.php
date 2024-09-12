@@ -4,18 +4,16 @@ namespace App\Exports;
 
 use App\Models\Member;
 use Maatwebsite\Excel\Concerns\FromCollection;
-use Maatwebsite\Excel\Concerns\WithEvents;
 use Maatwebsite\Excel\Events\BeforeWriting;
 use PhpOffice\PhpSpreadsheet\Worksheet\PageSetup;
 
-class MembersExport implements FromCollection, WithEvents
+class MembersInactifsExport implements FromCollection
 {
     /**
     * @return \Illuminate\Support\Collection
-    */
-    public function collection()
+    */public function collection()
     {
-        return Member::where('active','1')->get();//liste des membres actifs uniquement
+        return Member::where('active','null')->get();//liste des membres inactifs uniquement
     }
 
     public function registerEvents(): array
@@ -31,3 +29,7 @@ class MembersExport implements FromCollection, WithEvents
         ];
     }
 }
+
+
+
+

@@ -50,4 +50,6 @@ Route::group(['middleware' => 'auth'], function() {
     route::resource('contributiontype',ContributionTypeController::class)->except('delete');
     route::resource('member.presence',PresenceController::class);
     Route::get('members/export/', [MemberController::class, 'export'])->name('member.export');
+    Route::get('members/export_actif/', [MemberController::class, 'export_actif'])->name('member.export.actif');
+    Route::get('members/export_inactif/', [MemberController::class, 'export_inactif'])->name('member.export.inactif');
   });
