@@ -12,11 +12,12 @@ class ProfessionController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        $profession=Profession::paginate(5);
-        return view('profession.index')->with(['p'=>$profession]);
+        $pr=$request->input('pr');
+        $profession=Profession::search($pr)->paginate(5);
+        return view('profession.index',compact('pr'))->with(['p'=>$profession]);
     }
 
     /**

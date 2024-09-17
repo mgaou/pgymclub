@@ -12,11 +12,12 @@ class ClubController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        $clubs = Club::paginate(5);
-        return view('club.index')->with(['cl' => $clubs]);
+        $c=$request->input('c');
+        $clubs = Club::search($c)->paginate(5);
+        return view('club.index',compact('c'))->with(['cl' => $clubs]);
     }
 
     /**

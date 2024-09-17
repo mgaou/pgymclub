@@ -12,11 +12,12 @@ class DivisionController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        $divisions=Division::paginate(5);
-        return view('division.index')->with(['d' => $divisions]);
+        $q=$request->input('q');
+        $divisions=Division::search($q)->paginate(5);
+        return view('division.index',compact('q'))->with(['d' => $divisions]);
     }
 
     /**

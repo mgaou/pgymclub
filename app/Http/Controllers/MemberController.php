@@ -22,7 +22,7 @@ class MemberController extends Controller
         //
         //where('active', 1)->
         $q = $request->input('q');
-        $members = Member::search($q)->with('category')->latest()->paginate(5);
+        $members = Member::search($q)->with('category')->latest()->paginate(10);
        return view('member.index', compact('members','q'));
     }
 

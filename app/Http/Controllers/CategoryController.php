@@ -12,11 +12,12 @@ class CategoryController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        $categories = Category::paginate(5);
-        return view('category.index')->with(['c' => $categories]);
+        $t=$request->input('t');
+        $categories = Category::search($t)->paginate(5);
+        return view('category.index',compact('t'))->with(['c' => $categories]);
     }
 
     /**

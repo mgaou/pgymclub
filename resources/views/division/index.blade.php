@@ -4,6 +4,15 @@
     <div class="row justify-content-center">
           
         <div class="col-md-8">
+        <form class="my-4" method="get" action="{{ route('division.index') }}">
+                <div class="input-group mb-3 w-50">
+                    <!-- name c represente le nom du champ à rechercher quie est mis dans le controleur -->
+                    <input type="text" name="q" value="{{$q}}" class="form-control" placeholder="Saississez votre mot à rechercher..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-secondary" type="submit" id="button-addon2">Rechercher</button>
+                </div>
+        </form>
+
+
             <div class="card">
                 <div class="card-header">Répertoire des divisions</div>
 
